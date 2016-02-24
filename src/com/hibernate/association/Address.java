@@ -1,4 +1,4 @@
-package com.hibernate.mapping;
+package com.hibernate.association;
 
 import javax.persistence.Embeddable;
 

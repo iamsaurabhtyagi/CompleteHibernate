@@ -1,9 +1,8 @@
-package com.hibernate.mapping;
+package com.hibernate.association;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
 public class MainApp {
@@ -14,14 +13,14 @@ public class MainApp {
 		address.setStreet("#123");
 		address.setCity("CHD");
 		address.setState("PB");
-		address.setPinCode("102160");
+		address.setPinCode("546321");
 		
 		Employee emp=new Employee();
-		emp.setEmpId(10);
 		emp.setName("Saurabh");
-		emp.setAddress(address);
+		emp.setHomeAddress(address);
+		emp.setOfficeAddress(address);
 		
-		Configuration cfg=new AnnotationConfiguration();
+		Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
 		
 		SessionFactory sf=cfg.buildSessionFactory();

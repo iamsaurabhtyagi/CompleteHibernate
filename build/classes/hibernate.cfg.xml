@@ -12,10 +12,11 @@
         		<property name="hibernate.connection.username" >root</property>
         		<property name="hibernate.connection.password" >root</property>
         		
-        		<property name="hbm2ddl.auto">create</property>
+        		<property name="hbm2ddl.auto">update</property>
         		<property name="show_sql">true</property>
         		
-        		<mapping class="com.hibernate.mapping.Employee"/>
+        		<mapping class="com.hibernate.association.Employee"/>
+        		<mapping class="com.hibernate.collection.EmployeeDetail"/>
         		
             </session-factory>
         </hibernate-configuration>
