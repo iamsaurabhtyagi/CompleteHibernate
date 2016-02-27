@@ -16,7 +16,12 @@
         		<property name="show_sql">true</property>
         		
         		<mapping class="com.hibernate.association.Employee"/>
-        		<mapping class="com.hibernate.collection.EmployeeDetail"/>
+        		<mapping class="com.hibernate.collection.set.EmployeeDetail"/>
+        		<mapping class="com.hibernate.collection.list.Employee"/>
+        		<mapping class="com.hibernate.proxy.lazy.Employee"/>
+        		
+        		<mapping class="com.hibernate.mapping.onetoone.Employee"/>
+        		<mapping class="com.hibernate.mapping.onetoone.Vehicle"/>
         		
             </session-factory>
         </hibernate-configuration>

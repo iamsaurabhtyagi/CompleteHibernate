@@ -1,4 +1,4 @@
-package com.hibernate.collection;
+package com.hibernate.collection.set;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

@@ -1,4 +1,4 @@
-package com.hibernate.collection;
+package com.hibernate.collection.set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -28,7 +28,7 @@ public class MainApp {
 		address2.setPinCode("111560");
 		
 		EmployeeDetail employee=new EmployeeDetail();
-		employee.setName("Saurabh");
+		employee.setName("SUMIT");
 		employee.getsAddresses().add(address1);
 		employee.getsAddresses().add(address2);
 		
@@ -37,7 +37,7 @@ public class MainApp {
 		transaction.commit();
 		session.close();
 		System.out.println("Data inserted Successfully");
-
+		System.exit(0);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.hibernate.collection;
+package com.hibernate.collection.set;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,7 @@ public class EmployeeDetail {
 	private String name;
 	
 	@ElementCollection(targetClass=EmployeeAddress.class)
+	@JoinTable(name="EMPLOYEE_ADDRESS", joinColumns=@JoinColumn(name="USER_ID"))
 	private Set<EmployeeAddress> sAddresses=new HashSet<EmployeeAddress>();
 
 	public int getEmpId() {
@@ -36,7 +39,7 @@ public class EmployeeDetail {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public Set<EmployeeAddress> getsAddresses() {
 		return sAddresses;
 	}
