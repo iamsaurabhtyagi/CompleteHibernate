@@ -1,4 +1,4 @@
-package com.hibernate.mapping.onetoone;
+package com.hibernate.mapping.onetomany;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,25 +11,30 @@ public class MainApp {
 		
 		Configuration configuration=new Configuration();
 		configuration.configure();
-		
 		SessionFactory sessionFactory=configuration.buildSessionFactory();
 		Session session=sessionFactory.openSession();
 		Transaction transaction=session.beginTransaction();
 		
-		Vehicle vehicle=new Vehicle();
-		vehicle.setVehicleName("FZS");
-		vehicle.setVechicleNo("UP 20 3235");
+		Vehicle vehicle1=new Vehicle();
+		vehicle1.setVechicleNo("PB 20 1111");
+		vehicle1.setVehicleName("FZS");
 		
-		Employee employee=new Employee();
-		employee.setName("Swati");
-		employee.setVehicle(vehicle);
+		Vehicle vehicle2=new Vehicle();
+		vehicle2.setVechicleNo("PB 20 2222");
+		vehicle2.setVehicleName("FZS");
 		
-		session.save(employee);
-		session.save(vehicle);
+		User user=new User();
+		user.setName("Rohit Kumar");
+		user.getVehicle().add(vehicle1);
+		user.getVehicle().add(vehicle2);
+		
+		session.save(user);
+		session.save(vehicle1);
+		session.save(vehicle2);
 		
 		transaction.commit();
 		session.close();
-		System.out.println("Transaction Completed Successfully!");
+		System.out.println("Transaction has been Completed!");
 		System.exit(0);
 	}
 }

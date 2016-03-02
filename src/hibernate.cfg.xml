@@ -12,16 +12,29 @@
         		<property name="hibernate.connection.username" >root</property>
         		<property name="hibernate.connection.password" >root</property>
         		
-        		<property name="hbm2ddl.auto">update</property>
+        		<!-- this tag is responsible to create table automatically, it has 4 values
+        				create, update, validate, create-drop and all these have own different behavior -->
+        		<property name="hbm2ddl.auto">create</property>
+        		
+        		<!-- This tag is responsible to show executed query by hibernate on console -->
         		<property name="show_sql">true</property>
         		
-        		<mapping class="com.hibernate.association.Employee"/>
+        		<!-- <mapping class="com.hibernate.association.Employee"/>
         		<mapping class="com.hibernate.collection.set.EmployeeDetail"/>
         		<mapping class="com.hibernate.collection.list.Employee"/>
         		<mapping class="com.hibernate.proxy.lazy.Employee"/>
         		
         		<mapping class="com.hibernate.mapping.onetoone.Employee"/>
-        		<mapping class="com.hibernate.mapping.onetoone.Vehicle"/>
+        		<mapping class="com.hibernate.mapping.onetoone.Vehicle"/> 
+        		
+        		<mapping class="com.hibernate.mapping.onetomany.User"/>
+        		<mapping class="com.hibernate.mapping.onetomany.Vehicle"/> 
+        		
+        		<mapping class="com.hibernate.mapping.manytoone.UserDetail"/>
+        		<mapping class="com.hibernate.mapping.manytoone.VehicleDetail"/> -->
+        		
+        		<mapping class="com.hibernate.mapping.manytomany.Teacher"/>
+        		<mapping class="com.hibernate.mapping.manytomany.Vehicle"/>
         		
             </session-factory>
         </hibernate-configuration>

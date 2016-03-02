@@ -1,5 +1,6 @@
 package com.hibernate.mapping.onetoone;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,24 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity
+@Entity(name="EMP_DETAILS")
 public class Employee {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="EMPLOYEE_ID")
 	private int empId;
+	@Column(name="EMPLOYEE_NAME")
 	private String name;
 	
 	@OneToOne
-	@JoinColumn(name="VEHICLE_ID")
+	@JoinColumn(name="VEHICLE_ID",referencedColumnName="VEHICLE_ID")
 	Vehicle vehicle;
 	
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
 	public int getEmpId() {
 		return empId;
 	}
@@ -36,6 +33,12 @@ public class Employee {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
 	}
 
 }
