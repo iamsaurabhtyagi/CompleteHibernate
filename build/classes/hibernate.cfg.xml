@@ -31,10 +31,28 @@
         		<mapping class="com.hibernate.mapping.onetomany.Vehicle"/> 
         		
         		<mapping class="com.hibernate.mapping.manytoone.UserDetail"/>
-        		<mapping class="com.hibernate.mapping.manytoone.VehicleDetail"/> -->
+        		<mapping class="com.hibernate.mapping.manytoone.VehicleDetail"/> 
         		
         		<mapping class="com.hibernate.mapping.manytomany.Teacher"/>
-        		<mapping class="com.hibernate.mapping.manytomany.Vehicle"/>
+        		<mapping class="com.hibernate.mapping.manytomany.Vehicle"/> -->
+        		
+        		<!-- <mapping class="com.hibernate.inheritance.demo.User"/> -->
+        		<!-- <mapping class="com.hibernate.inheritance.demo.Vehicle"/>
+        		<mapping class="com.hibernate.inheritance.demo.TwoWheeler"/>
+        		<mapping class="com.hibernate.inheritance.demo.FourWheeler"/> -->
+        		
+        		<!-- <mapping class="com.hibernate.inheritance.singletable.Animal"/>
+        		<mapping class="com.hibernate.inheritance.singletable.Buffalo"/>
+        		<mapping class="com.hibernate.inheritance.singletable.Cow"/> -->
+        		
+        		<!-- <mapping class="com.hibernate.inheritance.tableperclass.Animal"/>
+        		<mapping class="com.hibernate.inheritance.tableperclass.Lion"/>
+        		<mapping class="com.hibernate.inheritance.tableperclass.Deer"/> -->
+        		
+        		<mapping class="com.hibernate.inheritance.joined.Animal"/>
+        		<mapping class="com.hibernate.inheritance.joined.Goat"/>
+        		<mapping class="com.hibernate.inheritance.joined.Wolf"/>
+        		
         		
             </session-factory>
         </hibernate-configuration>
